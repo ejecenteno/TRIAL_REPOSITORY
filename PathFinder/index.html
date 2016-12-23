@@ -1,0 +1,93 @@
+<!------------------------------------------------------------
+index.html
+	-Contains the elements in the Path Finder web app
+	
+Author: ejecenteno
+-------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Scripts, APIs, style -->
+		<title>Path Finder</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- 		<script src="js/jquery-3.1.1.min.js"></script> -->
+		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDxpL_ZkgZNaD-so1Z_s6ELICQVpzbnFPU"></script>
+		<script src="js/EventHandlers.js"></script>
+		<script src="js/TSPFileParser.js"></script>
+		<script src="js/PathFinder.js"></script>
+		<script src="js/GoogleMapsPlotter.js"></script>
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<!-- Header -->
+		<div class="header">
+			<img id="icon" src="images/icon.jpg" alt="icon">
+			<h1>Path Finder</h1>
+		</div>
+		
+		<!-- [Find Path Given Starting Point and Set of Positions] -->
+		<div class="maps" id="googleMap1"></div>
+		
+		<div class="left-panel">
+			<h3>[ Find Path Given Starting Point and Set of Positions ]</h3>
+			
+			<b>Start Position:</b> <br>
+			<select class="positions-list" id="start-set-of-points"></select> <br>
+			
+			<b>Set of Positions:</b> <br>
+			<select multiple class="positions-list" id="set-of-points"></select> <br>
+			
+			<div id = info>
+				<i>For multiple selection:</i> <br>
+				<i>Ctrl+Click -> select multiple by specific</i> <br>
+				<i>Shift+Click -> select multiple by batch</i> <br>
+			</div>
+			
+			<button class="buttons" id="btn-path-by-set-of-points">
+				<b>Find Path</b>
+			</button>
+			
+			<input type="checkbox" id="chk-show-markers-by-set-of-points">Show Destination Position Markers<br>
+
+			<button class="buttons" id="reset-path-by-set-of-points">
+				<b>Reset</b>
+			</button>
+		</div>
+
+		<!-- [Find Path Given Starting Point and Time Interval] -->
+		<div class="maps" id="googleMap2"></div>
+		
+		<div class="left-panel">
+			<h3>[ Find Path Given Starting Point and Time Interval ]</h3>
+			
+			<b>Start Position:</b><br>
+			<select class="positions-list" id="start-time-interval"></select> <br>
+			
+			<b>Time Interval:</b> <br>
+			<input type="text" id="time-interval" value="0"> <br>
+			
+			<b>Travel Speed:</b> <br>
+			<input type="text" id="travel-speed" value="0"> <br>
+
+			<button class="buttons" id="btn-path-by-time-interval">
+				<b>Find Path</b>
+			</button>
+			
+			<input type="checkbox" id="chk-show-markers-by-time-interval">Show Destination Position Markers<br>
+			
+			<b>Max Distance:</b>
+			<p id="max-distance"></p> 
+
+			<b>Travelled Distance:</b>
+			<p id="travelled-distance"></p>
+
+			<b>Number of Positions Visited (Excluding Start Position):</b>
+			<p id="positions-visited"></p>
+			
+			<button class="buttons" id="reset-path-by-time-interval">
+				<b>Reset</b>
+			</button>
+		</div>
+	</body>
+</html>
